@@ -1,15 +1,8 @@
-<ngx-progress-tracker [dataSource]="data">
-  <ng-template #trackerHeader let-header>
-      <div style="margin-left: 1px;word-break: break-all;">
-          <span><strong>{{header}}</strong></span>
-      </div>
-  </ng-template>
-   <ng-template #trackerContent let-content>
-      <div *ngIf="content.key=='status'">
-          <span style="display:inline-block;vertical-align: middle;"><strong>{{content.value}}</strong></span>
-      </div>
-      <div *ngIf="content.key=='date'">
-          <span><strong>{{content.value}}</strong></span>
-      </div>
-   </ng-template>
-</ngx-progress-tracker>
+<test-ngx-progress-tracker-custom-element></test-ngx-progress-tracker-custom-element>
+
+<!--
+  uncomment below tag if you want to use the ngx-progress-tracker as angular library ,
+  also uncomment the commented line in the app.module.ts
+-->
+
+<!-- <test-ngx-progress-tracker></test-ngx-progress-tracker> -->

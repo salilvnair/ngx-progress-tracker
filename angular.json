@@ -25,7 +25,11 @@
             "styles": [
               "src/styles.css"
             ],
-            "scripts": [],
+            "scripts": [
+              {
+                "input": "node_modules/document-register-element/build/document-register-element.js"
+              }
+            ],
             "es5BrowserSupport": true
           },
           "configurations": {
@@ -158,6 +162,169 @@
             "tsConfig": [
               "projects/ngx-progress-tracker/tsconfig.lib.json",
               "projects/ngx-progress-tracker/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "ngx-progress-tracker-mfe": {
+      "root": "projects/ngx-progress-tracker-mfe/",
+      "sourceRoot": "projects/ngx-progress-tracker-mfe/src",
+      "projectType": "application",
+      "prefix": "app",
+      "schematics": {},
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/ngx-progress-tracker-mfe",
+            "index": "projects/ngx-progress-tracker-mfe/src/index.html",
+            "main": "projects/ngx-progress-tracker-mfe/src/main.ts",
+            "polyfills": "projects/ngx-progress-tracker-mfe/src/polyfills.ts",
+            "tsConfig": "projects/ngx-progress-tracker-mfe/tsconfig.app.json",
+            "assets": [
+              "projects/ngx-progress-tracker-mfe/src/favicon.ico",
+              "projects/ngx-progress-tracker-mfe/src/assets"
+            ],
+            "styles": [
+              "projects/ngx-progress-tracker-mfe/src/styles.css"
+            ],
+            "scripts": [],
+            "es5BrowserSupport": true
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/ngx-progress-tracker-mfe/src/environments/environment.ts",
+                  "with": "projects/ngx-progress-tracker-mfe/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "ngx-progress-tracker-mfe:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "ngx-progress-tracker-mfe:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "ngx-progress-tracker-mfe:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/ngx-progress-tracker-mfe/src/test.ts",
+            "polyfills": "projects/ngx-progress-tracker-mfe/src/polyfills.ts",
+            "tsConfig": "projects/ngx-progress-tracker-mfe/tsconfig.spec.json",
+            "karmaConfig": "projects/ngx-progress-tracker-mfe/karma.conf.js",
+            "styles": [
+              "projects/ngx-progress-tracker-mfe/src/styles.css"
+            ],
+            "scripts": [],
+            "assets": [
+              "projects/ngx-progress-tracker-mfe/src/favicon.ico",
+              "projects/ngx-progress-tracker-mfe/src/assets"
+            ]
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/ngx-progress-tracker-mfe/tsconfig.app.json",
+              "projects/ngx-progress-tracker-mfe/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "ngx-progress-tracker-mfe-e2e": {
+      "root": "projects/ngx-progress-tracker-mfe-e2e/",
+      "projectType": "application",
+      "prefix": "",
+      "architect": {
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "projects/ngx-progress-tracker-mfe-e2e/protractor.conf.js",
+            "devServerTarget": "ngx-progress-tracker-mfe:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "ngx-progress-tracker-mfe:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": "projects/ngx-progress-tracker-mfe-e2e/tsconfig.e2e.json",
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "ngx-progress-tracker-custom-element": {
+      "root": "projects/ngx-progress-tracker-custom-element",
+      "sourceRoot": "projects/ngx-progress-tracker-custom-element/src",
+      "projectType": "library",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/ngx-progress-tracker-custom-element/tsconfig.lib.json",
+            "project": "projects/ngx-progress-tracker-custom-element/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/ngx-progress-tracker-custom-element/src/test.ts",
+            "tsConfig": "projects/ngx-progress-tracker-custom-element/tsconfig.spec.json",
+            "karmaConfig": "projects/ngx-progress-tracker-custom-element/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/ngx-progress-tracker-custom-element/tsconfig.lib.json",
+              "projects/ngx-progress-tracker-custom-element/tsconfig.spec.json"
             ],
             "exclude": [
               "**/node_modules/**"

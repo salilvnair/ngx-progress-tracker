@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'ngx-progress-tracker-lib';
+  title = 'ngx-progress-tracker-mfe';
 }

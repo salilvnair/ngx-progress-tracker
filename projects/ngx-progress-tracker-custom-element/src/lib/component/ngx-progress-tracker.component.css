@@ -1,0 +1,56 @@
+.ngx-progress-tracker {
+	display:flex;
+    width: 100%;
+}
+
+.ngx-progress-bar {
+    width: 20%;
+	height:50px;
+}
+
+.ngx-progress-header-container {
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+}
+
+.ngx-progress-stepper {
+    height: 12px;
+    border-radius: 4px; 
+    border-color: #666; 
+    margin-top:3px;
+    width: 100%;
+    vertical-align: middle;
+}
+
+
+.ngx-progress-stepper-other-children { 
+    border-left: none; 
+    border-right: none; 
+    border-radius: 0; 
+    margin-left: 3px;
+}
+
+.ngx-progress-stepper-first-child { 
+    border-right: none; 
+    border-radius: 4px 0 0 4px; 
+}
+
+.ngx-progress-stepper-last-child { 
+    border-left: none;
+    border-radius: 0 4px 4px 0;  
+    margin-left: 3px;
+}
+
+.ngx-progress-bar-status {
+	width: 100%;
+	display: flex;
+}
+
+.ngx-progress-bar-content {
+	margin-left: 2px;
+}
+
+.ngx-progress-bar-content-container {
+    word-break: break-all;
+}

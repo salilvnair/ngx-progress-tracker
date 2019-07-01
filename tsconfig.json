@@ -24,6 +24,12 @@
       ],
       "ngx-progress-tracker/*": [
         "dist/ngx-progress-tracker/*"
+      ],
+      "ngx-progress-tracker-custom-element": [
+        "dist/ngx-progress-tracker-custom-element"
+      ],
+      "ngx-progress-tracker-custom-element/*": [
+        "dist/ngx-progress-tracker-custom-element/*"
       ]
     }
   }

@@ -1,0 +1,17 @@
+<ngx-progress-tracker>
+  <ng-container *ngFor="let dataObj of data">
+      <div style="margin-left: 1px;word-break: break-all;" slot="header_{{dataObj.id}}">
+          <span><strong>{{dataObj.header}}</strong></span>
+      </div>
+      <ng-container *ngFor="let content of dataObj.content">
+        <div *ngIf="content.key=='status'" slot="content_{{dataObj.id}}_{{content.key}}">
+            <span style="display:inline-block;vertical-align: middle;">
+              <strong>{{content.value}}</strong>
+            </span>
+        </div>
+        <div *ngIf="content.key=='date'" slot="content_{{dataObj.id}}_{{content.key}}">
+            <span><strong>{{content.value}}</strong></span>
+        </div>
+     </ng-container>
+  </ng-container>
+</ngx-progress-tracker>

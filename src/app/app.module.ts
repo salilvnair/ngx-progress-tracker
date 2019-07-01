@@ -1,18 +1,25 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { NgxElementUtilModule } from '@salilvnair/ngx-element-util';
 import { AppComponent } from './app.component';
-import { NgxProgressTrackerModule } from 'projects/ngx-progress-tracker/src/public-api';
+import { TestNgxProgressTrackerCustomComponent } from './test-ngx-progress-tracker-custom/test-ngx-progress-tracker-custom.component';
+import { TestNgxProgressTrackerComponent } from './test-ngx-progress-tracker/test-ngx-progress-tracker.component';
+//import { NgxProgressTrackerModule } from 'projects/ngx-progress-tracker/src/public-api';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    TestNgxProgressTrackerCustomComponent,
+    TestNgxProgressTrackerComponent
   ],
   imports: [
     BrowserModule,
-    NgxProgressTrackerModule
+    NgxElementUtilModule,
+    //NgxProgressTrackerModule
+    //uncomment above if you want to use the ngx-progress-tracker as angular library
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  schemas:[CUSTOM_ELEMENTS_SCHEMA]
 })
 export class AppModule { }
